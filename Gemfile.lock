@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: git://github.com/bgentry/showoff-pusher
-  revision: c61edff37e18d49121fe34c526cf6b22a16d3a80
+  revision: e7331292daba82cde445da130c8bca362a5c5304
   specs:
     showoff-pusher (0.0.1)
       pusher (~> 0.8.3)
