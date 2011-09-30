@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/bgentry/showoff
+  remote: https://github.com/bgentry/showoff
   revision: b692a0100616052498b52da24b1d3bb96589c66a
   specs:
     showoff (0.7.0)
@@ -11,8 +11,8 @@ GIT
       sinatra
 
 GIT
-  remote: git://github.com/bgentry/showoff-pusher
-  revision: e7331292daba82cde445da130c8bca362a5c5304
+  remote: https://github.com/bgentry/showoff-pusher
+  revision: f2f81aaae9845a3a748c2211ed66a96e2b74160c
   specs:
     showoff-pusher (0.0.1)
       pusher (~> 0.8.3)
