@@ -1,7 +1,7 @@
 @import url('https://statics.herokuapp.com/fonts/fonts.css');
 
 body {
-	color: #8272D1;
+	color: #C6C2EF;
 	background: url(http://assets.heroku.com.s3.amazonaws.com/showoff/background-seigaiha.png), -moz-linear-gradient(90deg, #1b1b24 0%, hsl(240, 14%, 6%) 100%);
 	background: url(http://assets.heroku.com.s3.amazonaws.com/showoff/background-seigaiha.png), -webkit-gradient(linear, left bottom, left top, from(#1b1b24), to(hsl(240, 14%, 6%)));
 }
@@ -16,14 +16,14 @@ body {
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.42);
 }
 .content h1 {
-	color: #C6C2EF;
+	color: #fff;
 }
 #footer {
 	background: url(http://assets.heroku.com.s3.amazonaws.com/showoff/logo.png) no-repeat left center;
 	color: hsla(240, 20%, 40%, .7);
 	height: 30px;
-	line-height: 30px;
 	padding-left: 28px;
 	top: -36px;
 	width: 977px;
+	font: 13px/30px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
