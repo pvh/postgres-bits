@@ -27,3 +27,12 @@ body {
 	width: 977px;
 	font: 13px/30px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
+
+.commandline code.command{
+  color: black;
+} 
+
+pre, code {
+  background-color: white;
+  color: black;
+}
