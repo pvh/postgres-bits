@@ -1,1 +1,8 @@
-{ "name": "My Preso", "sections": [ {"section":"one"} ]}
+{
+  "name": "A PostgreSQL Service",
+  "sections": [
+    "# A PostgreSQL Service",
+    {"section": "heroku-intro"},
+    {"section": "fin"}
+  ]
+}

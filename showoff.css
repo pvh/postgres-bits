@@ -36,3 +36,30 @@ pre {
   background-color: white;
   color: black;
 }
+
+table {
+  margin-left: 3em;
+  font-size: 30px;
+}
+th {
+  text-align: right
+}
+
+td {
+  padding: 1em;
+}
+
+a:link,
+a:visited {
+  border-bottom: 2px solid #d4f1ff;
+  color: #d4f1ff;
+  text-decoration: none;
+}
+
+.content::after {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  content: url(postgres-logo.png);
+}
+
