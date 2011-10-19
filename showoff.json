@@ -3,6 +3,7 @@
   "sections": [
     "# A PostgreSQL Service",
     {"section": "heroku-intro"},
+    {"section": "service"},
     {"section": "fin"}
   ]
 }
