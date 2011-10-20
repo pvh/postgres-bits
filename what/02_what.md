@@ -142,6 +142,7 @@
 * Test ideas by forking your database
 * Run analytics on followers
 * Load test on a larger host
+* Shard a large dataset
 
 !SLIDE subsection
 
