@@ -78,3 +78,6 @@
     Retrieving... done
     Restoring... done
 
+!SLIDE
+
+# Or use the [website](http://postgres.heroku.com)
