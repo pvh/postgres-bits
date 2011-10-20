@@ -61,13 +61,12 @@
 # Immediate Availability
 
 * get a database now
-* begin developing immediately
-* or, go to production today
-* sometimes by accident
+* go to production today
+* scale up easily
 
 !SLIDE subsection
 
-# Friendlier tools
+# Helpful tools
 
 !SLIDE code commandline incremental
 
@@ -79,14 +78,6 @@
 
     Capturing... done
     Storing... done
-
-!SLIDE code commandline incremental
-
-# ... or daily backups...
-
-    $ heroku addons:upgrade pgbackups:daily
-    -----> Upgrading pgbackups:daily to myapp... done
-           Plan upgraded
 
 !SLIDE code commandline incremental
 
