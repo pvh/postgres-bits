@@ -63,3 +63,20 @@ a:visited {
   content: url(postgres-logo.png);
 }
 
+#layercake {
+  float: left;
+}
+
+#layercake {
+  position: absolute;
+  top: 200px;
+  left: 20px;
+  font-size: 64pt !important;
+}
+
+#comments {
+  width: 50%;
+  height: 100%;
+  margin-left: 50%;
+  font-size: x-large;
+}

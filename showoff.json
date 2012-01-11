@@ -1,11 +1,12 @@
 {
-  "name": "A PostgreSQL Service",
+  "name": "Learn to Love Your Database",
   "sections": [
-    "# A PostgreSQL Service",
+    "# Learn to Love Your Database\n## Or at least pick up a few tricks",
     {"section": "heroku-intro"},
     {"section": "talk-structure"},
-    {"section": "what"},
-    {"section": "service"},
+    {"section": "databases"},
+    {"section": "sql"},
+    {"section": "water"},
     {"section": "fin"}
   ]
 }
