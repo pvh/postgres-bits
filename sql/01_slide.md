@@ -1,11 +1,12 @@
 !SLIDE subsection
 
-#SQL: going beyond CRUD
+# SQL sandbox
 
 !SLIDE
 
 # the question:
-## How much time did my application spend in each state?
+## Assuming I've been keeping logs of it,
+## how long was my application in which state?
 
 !SLIDE
 
@@ -44,7 +45,7 @@ and make ourselves some simulated data.
     @@@ sql
     SELECT 
       floor(random() * 20) as app_id,
-      generate_series(...) as entered_at;
+      generate_series(1, 5) as entered_at;
 
 !SLIDE code
 
@@ -53,7 +54,7 @@ and make ourselves some simulated data.
     @@@ sql
     SELECT (ARRAY[
       'starting', 'running', 'offline'
-    ])[random() * 3 + 1];
+    ])[floor(random() * 3) + 1];
 
 !SLIDE
 
@@ -90,12 +91,6 @@ and make ourselves some simulated data.
          now(), 
          '2 hour'::interval) as entered_at;
 
-
-## Instant* seed data!
-
-!SLIDE
-
-## *: for some value of instant
 
 !SLIDE
 
@@ -183,7 +178,7 @@ You get one free when you make a table, <i>but you can make your own</i>.
     (5 rows)
 !SLIDE
 
-## But what if some rows are different than others?
+## But what if we need to split these rows into groups?
 
 !SLIDE code
 
@@ -217,9 +212,9 @@ You get one free when you make a table, <i>but you can make your own</i>.
        FROM events;
                 current          |        next               
      ----------------------------+----------------------------
-      (0,running,"2011-01-11")   | (0,running,"2011-01-12")
-      (0,running,"2011-01-11")   | (0,starting,"2011-01-18")
-      (0,starting,"2011-01-11")  | (0,offline,"2011-01-24")
+      (0,starting,"2011-01-11")  | (0,running,"2011-01-12")
+      (0,running,"2011-01-12")   | (0,offline,"2011-01-18")
+      (0,offline,"2011-01-18")   | (0,running,"2011-01-24")
 
 !SLIDE code
 
@@ -240,7 +235,7 @@ You get one free when you make a table, <i>but you can make your own</i>.
 
 !SLIDE
 
-Ugh. This sucks. 
+Ugh. This is getting ugly.
 
 !SLIDE
 
@@ -273,14 +268,21 @@ Great, now how long did each app spend in the running state on occasions where i
     @@@ sql
     WITH
       transitions AS (...),
-      durations AS (...)
+      du rations AS (
+        SELECT *, 
+          (next).entered_at - 
+            (current).entered_at as duration
+        FROM transitions;
+      ),
+      interesting_transitions AS (
+        SELECT * FROM durations
+          WHERE (current).state = 'running'
+            AND (next).state = 'offline')
 
     SELECT (current).app_id,
            justify_hours(sum(duration))
              as running_for
-    FROM durations
-    WHERE (current).state = 'running'
-      AND (next).state = 'offline'
+    FROM interesting_transitions
     GROUP BY (current).app_id;
 
 !SLIDE code
@@ -294,7 +296,7 @@ Great, now how long did each app spend in the running state on occasions where i
           3 | 135 days 02:00:00
     (20 rows)
 
-!SLIDE
+!SLIDE center
 
 ![Cloud](mushroom-cloud.jpg)
 
@@ -329,15 +331,36 @@ Okay, brain melted yet?
 
 !SLIDE bullets
 
-# honorable mentions
+# left as an exercise
 * \h KEYWORD
-* hstore (k/v columns!)
 * EXPLAIN query
+* hstore (k/v columns!)
 * full text search
 
 !SLIDE bullets
 
+# fun catalog tables
+* pg\_stat\_activity
+* pg\_locks
+* pg\_stat\_database
+
+!SLIDE bullets
+
 # RTF Postgres M
-## (I did)
-* Section II (esp Ch 8, 9)
-* Section VII (esp Ch 44, 45)
+### (I did)
+* Data Types, Ch. 8
+* Functions and Operators, Ch. 9
+* Overview of PostgreSQL Internals, Ch. 44
+* System Catalogs, Ch. 45
+
+!SLIDE
+
+Not bad for a big hash.
+
+!SLIDE
+
+PS: 
+
+Don't develop against SQLite and deploy on PostgreSQL;
+
+that's like testing on Ruby 1.8.6 and deploying on Ruby 1.9.1.
