@@ -111,6 +111,10 @@ All of the queries on slides ahead are designed to let you copy/paste them into 
 
 ## Data's in, let's get down to querying
 
+!SLIDE
+
+# Lemma 1: Row Types
+
 !SLIDE code commandline incremental
 
 # Here's something new
@@ -140,7 +144,7 @@ You get one free when you make a table, <i>but you can make your own</i>.
 
 !SLIDE
 
-# Next up: Window functions!
+# Lemma 2: Window functions
 
 !SLIDE
 
