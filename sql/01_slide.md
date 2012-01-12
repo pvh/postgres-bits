@@ -191,17 +191,19 @@ You get one free when you make a table, <i>but you can make your own</i>.
     @@@ sql
     => SELECT data, 
          lead(data, 1) OVER (
-           PARTITION BY (data > 2)
+           PARTITION BY (data % 2)
            ORDER BY data)
-       FROM generate_series(0, 4) as data;
+       FROM generate_series(0, 9) as data;
      data | lead 
     ------+------
-        0 |    1
-        1 |    2
-        2 |     
-        3 |    4
+        0 |    2
+        2 |    4
         4 |     
+        1 |    3
+        3 |     
     (5 rows)
+
+Here we partition the rows by whether they are even or odd.
 
 !SLIDE
 
