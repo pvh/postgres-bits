@@ -5,8 +5,8 @@
 !SLIDE
 
 # the question:
-## Assuming I've been keeping logs of it,
-## how long was my application in which state?
+## How can I reason about the progress of a 
+## state machine which logs its state changes?
 
 !SLIDE
 
@@ -20,8 +20,7 @@
 
 !SLIDE
 
-First, let's rummage in the bag of tricks
-and make ourselves some simulated data.
+All of the queries on slides ahead are designed to let you copy/paste them into any psql console to follow along at home.
 
 !SLIDE code
 
@@ -55,6 +54,8 @@ and make ourselves some simulated data.
     SELECT (ARRAY[
       'starting', 'running', 'offline'
     ])[floor(random() * 3) + 1];
+
+[Postgresql Manual, 8.14](http://www.postgresql.org/docs/current/static/arrays.html)
 
 !SLIDE
 
@@ -91,6 +92,7 @@ and make ourselves some simulated data.
          now(), 
          '2 hour'::interval) as entered_at;
 
+[Postgres Manual, SQL Commands Reference: CREATE TABLE AS](http://www.postgresql.org/docs/current/static/sql-createtableas.html)
 
 !SLIDE
 
@@ -113,17 +115,16 @@ and make ourselves some simulated data.
 
 # Here's something new
 
-    $ SELECT events from events limit 3;
+    $ SELECT events from events;
                         events                    
     ----------------------------------------------
      (1,offline,"2011-01-11 02:03:31.86156+00")
      (17,starting,"2011-01-11 04:03:31.86156+00")
      (19,offline,"2011-01-11 06:03:31.86156+00")
-    (3 rows)
 
 It's the whole record packed into a single "composite type".
 You get one free when you make a table, <i>but you can make your own</i>.
-[Postgres Manual Ch. 8.15](http://www.postgresql.org/docs/9.1/static/rowtypes.html)
+[Postgres Manual, 8.15](http://www.postgresql.org/docs/current/static/rowtypes.html)
 
 !SLIDE code
 
@@ -131,7 +132,7 @@ You get one free when you make a table, <i>but you can make your own</i>.
 
     @@@ sql
     => SELECT (e).state FROM (
-        SELECT events as E
+        SELECT events as e
         FROM events
        ) as sub;
 
@@ -144,6 +145,7 @@ You get one free when you make a table, <i>but you can make your own</i>.
 !SLIDE
 
 ## Window functions let you relate between rows!
+(I do not know how I ever lived without this.)
 
 !SLIDE code
 
