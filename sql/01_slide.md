@@ -140,7 +140,7 @@ You get one free when you make a table, <i>but you can make your own</i>.
         FROM events
        ) as sub;
 
-## () disambiguates CTs from tables
+() distinguishes a composite type from a table for the parser
 
 !SLIDE
 
