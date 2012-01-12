@@ -15,13 +15,7 @@ All hail the great hash in the sky!
 
 !SLIDE
 
- *: Forgive me, I'm only going to talk about relational databases.
-
-!SLIDE bullets
-
-# purpose
-* Store data reliably & efficiently.
-* Query data flexibly & performantly.
+ *: Forgive me, this talk is really about Postgres.
 
 !SLIDE subsection
 
