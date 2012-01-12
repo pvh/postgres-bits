@@ -201,7 +201,9 @@ You get one free when you make a table, <i>but you can make your own</i>.
         1 |    3
         3 |     
 
-Here we partition the rows by whether they are even or odd.
+<div style="margin: 10px;">
+     Here we partition the rows by whether they are even or odd.
+</div>
 
 !SLIDE
 
