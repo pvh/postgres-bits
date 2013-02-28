@@ -1,22 +1,28 @@
+!SLIDE subsection
 # UUIDs
+     @@@sql
+     ALTER TABLE ADD COLUMN (my_uuid uuid);
+       SELECT uuid_generate_v4();
 
-Stop using numbers as IDs. Stop it right now.
-
+.notes Stop using numbers as IDs. Stop it right now.
 Everyone has had a database where their primary key has become a big problem. Eventually you run out of space, or get into conflicts due to data mangling, sharding, or some other kind of problem.
-
 Just. Use. UUIDs.
 
-## Great for
+!SLIDE
+# install the extension
+    @@@sql
+    CREATE EXTENSION "uuid-ossp";
 
-tables
-foreign keys
+!SLIDE
+# use it for your primary keys
+    @@@sql
+    CREATE TABLE t (
+      uuid uuid PRIMARY KEY 
+                DEFAULT uuid_generate_v4(), 
+      name text);
 
-## Examples
-
-CREATE EXTENSION "uuid-ossp";
-CREATE TABLE t (uuid uuid PRIMARY KEY DEFAULT uuid_generate_v4(), name text);
-https://dataclips.heroku.com/hgidwadijlyvxxudvsppuwlvwlnm
-
+!SLIDE
 ## Further reading
+.notes https://dataclips.heroku.com/hgidwadijlyvxxudvsppuwlvwlnm
 
 http://www.postgresql.org/docs/9.2/static/uuid-ossp.html

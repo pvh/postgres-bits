@@ -1,20 +1,37 @@
-# Arrays
+!SLIDE subsection
+# arrays
+     ARRAY['oh', 'hello', 'there']
 
-Instead of joining in tables, sometimes it's most convenient, performant, or intuitive to simply use arrays to model a list of data. An array can be multidimensional but can only hold one type.
+.notes Instead of joining in tables, sometimes it's most convenient, performant, or intuitive to simply use arrays to model a list of data. An array can be multidimensional but can only hold one type.
 
-## Great for
+!SLIDE
+## show me the contents of my groups
+    @@@ sql
+    select array_agg(name) from agents 
+       group by affiliation;
 
-array_agg() in GROUP BY clauses
-using as an adhoc table in a query
-storing tags in an indexed way
+!SLIDE
+## pick me a random value
+    @@@ sql
+    select (array['hi', 'there', 
+               'everyone'])[random()*2 + 1]
 
-## Examples
+!SLIDE
+.notes This can be made blindingly fast with a GIN index.
+## find a row that includes some tags
+    @@@ sql
+    select name, tags from agents where 
+      tags @> array['arrears', 'probation']
 
-select array_agg(name) from agents group by affiliation;
-select (array['hi', 'there', 'everyone'])[random()*2 + 1]
-select name from agents where tags @> array['arrears', 'probation'];
-https://dataclips.heroku.com/ocdsqenqybkpuyhsyhmectulykhf
+!SLIDE
+## unnest the array into rows
+    @@@ sql
+    select unnest(tags) as tag from agents 
+       where name = 'Sterling Archer';
 
+.notes https://dataclips.heroku.com/ocdsqenqybkpuyhsyhmectulykhf
+
+!SLIDE
 ## Further reading
 
 http://www.postgresql.org/docs/9.2/static/arrays.html

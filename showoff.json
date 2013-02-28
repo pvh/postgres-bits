@@ -1,12 +1,11 @@
 {
-  "name": "Learn to Love Your Database",
+  "name": "Postgres: The Bits You Haven't Found",
   "sections": [
-    "# Learn to Love Your Database\n## Or at least pick up a few tricks",
+    "# Postgres\n# The Bits You Haven't Found",
     {"section": "heroku-intro"},
     {"section": "talk-structure"},
-    {"section": "databases"},
     {"section": "sql"},
-    {"section": "water"},
+    {"section": "demo"},
     {"section": "fin"}
   ]
 }

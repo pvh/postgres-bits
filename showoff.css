@@ -1,4 +1,5 @@
 @import url('https://statics.herokuapp.com/fonts/fonts.css');
+@import url(http://fonts.googleapis.com/css?family=Kreon:400,700);
 
 body {
 	color: #C6C2EF;
@@ -12,7 +13,7 @@ body {
 	background: hsl(240, 14%, 11%);
 }
 .content {
-	font-family: "CorbelRegular", "Helvetica Neue", Helvetica, sans-serif;
+	font-family: "Kreon", "Helvetica Neue", Helvetica, sans-serif;
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.42);
 }
 .content h1 {

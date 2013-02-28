@@ -1,25 +1,48 @@
-# "Window" Functions
+!SLIDE subsection
+# Window Functions
+    @@@sql
+    SELECT lead(status, 1) OVER 
+      ( PARTITION BY agent_uuid 
+        ORDER BY when ) 
+    FROM agent_status
 
-It's like a souped-up GROUP BY without the grouping.
-
+.notes It's like a souped-up GROUP BY without the grouping.
 Often times you need to relate two rows from the same table in ways
 that have to do with ordering or grouping their contents. This is a
 huge pain to implement correctly in application code and inefficient.
 
-## Great for
+!SLIDE
+# determining event duration
+    @@@sql
+    SELECT when - lag(when, 1) OVER 
+        ( PARTITION BY agent_uuid 
+          ORDER BY when )
+      AS duration
+    FROM metrics;
 
-invoices
-site analytics
-state machines
-any time you need to relate multiple rows
+!SLIDE
+# find the sixth decile
+    @@@sql
+    WITH decile as (
+      SELECT *, 
+         ntile(10) OVER ( ORDER BY score )
+    ) SELECT * FROM decile where ntile = 6;
 
-## Examples
-
-SELECT lead(status, 1) OVER ( PARTITION BY agent_uuid ORDER BY when ) FROM agent_status
-https://dataclips.heroku.com/dsjnolxgeksipvyhujkgsyhymrmv
-
+!SLIDE
+# tracking state changes
+    @@@sql
+    SELECT (agent_statuses) as current, 
+           lead((agent_statuses), 1) OVER 
+             ( PARTITION BY agent_uuid 
+               ORDER BY when )
+              as next
+    FROM agent_statuses; 
+    
+!SLIDE
 ## Further reading
+.notes https://dataclips.heroku.com/dsjnolxgeksipvyhujkgsyhymrmv
 
 http://www.postgresql.org/docs/9.1/static/tutorial-window.html
 http://www.postgresql.org/docs/9.1/static/functions-window.html
 http://www.postgresql.org/docs/9.1/static/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS
+http://wiki.postgresql.org/wiki/Mandelbrot_set

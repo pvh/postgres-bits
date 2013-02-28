@@ -1,6 +1,8 @@
-!SLIDE bullets
+!SLIDE bullets incremental
 
-* analytics workflow
-* fabricating test data
-* expense reports
-* operational intelligence
+# forecast
+
+* 12 postgres features you might have missed
+* taunting the demo gods
+* conclusion
+

@@ -2,7 +2,7 @@
 
 It's a powerful key-value store that lives in a column. It supports full, generalized indexes out of the box and it's widely supported, including native support in Rails 4.
 
-# Great for
+## Great for
 
 metrics
 one-off attributes
@@ -10,7 +10,7 @@ sparse data-sets
 migration-free schema adaptation
 comparing tables
 
-# Examples
+## Examples
 
 SELECT 'temperature => 3, pressure => 100, depth => 30, witnessed=>true'::hstore
 SELECT 'temperature => 3, pressure => 100, depth => 30, witnessed=>true'::hstore
