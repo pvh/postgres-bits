@@ -12,7 +12,7 @@
 # WITH changed my life.
 
 !SLIDE
-# with gives queries a narrative
+## with gives queries a narrative
     @@@sql
     WITH
       prepared_data AS ( ... )
@@ -22,7 +22,7 @@
     GROUP BY data;
 
 !SLIDE
-# with expressions are chainable
+## with expressions are chainable
     @@@sql
     WITH 
       subquery AS ( SELECT 1 ),
@@ -31,7 +31,7 @@
     SELECT * FROM subquery, other_query;
 
 !SLIDE
-# even recursive
+## even recursive
     @@@sql
     WITH RECURSIVE t(n) AS (
       VALUES (1)
@@ -46,7 +46,7 @@
 ## WITH expressions are optimization boundaries
 
 !SLIDE
-## Further reading
+# Further reading
 .notes https://dataclips.heroku.com/efbiveiwdjrwrfpykhtomnehgkgn
 
 http://www.postgresql.org/docs/9.2/static/queries-with.html
