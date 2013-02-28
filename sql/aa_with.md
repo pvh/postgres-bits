@@ -15,9 +15,10 @@
 # with gives queries a narrative
     @@@sql
     WITH
-      crunch_some_data AS ( ... )
+      prepared_data AS ( ... )
     SELECT data, count(data), 
            min(data), max(data)
+    FROM prepared_data
     GROUP BY data;
 
 !SLIDE
@@ -25,7 +26,8 @@
     @@@sql
     WITH 
       subquery AS ( SELECT 1 ),
-      other_query AS ( SELECT * FROM subquery )
+      other_query AS ( 
+        SELECT * FROM subquery )
     SELECT * FROM subquery, other_query;
 
 !SLIDE

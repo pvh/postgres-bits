@@ -1,5 +1,5 @@
 !SLIDE subsection
-# Ranges
+# ranges
     @@@sql
     daterange(
       '["Jan 1 2013", "Jan 15 2013")'
@@ -8,7 +8,7 @@
 .notes Ranges are awesome, especially for time and space applications. You could do a whole talk on ranges. You can create so-called exclusion constraints which can protect against overlapping reservations.
 
 !SLIDE
-# containment (`@>`)
+## containment (`@>`)
     @@@sql
     SELECT 
       daterange('Jan 1 2013', 'Feb 1 2013') 
@@ -16,18 +16,18 @@
       'Jan 15 2013'::date;
 
 !SLIDE
-# overlap (`&&`)
+## overlap (`&&`)
     @@@sql
     SELECT numrange(3,7) && numrange(4,12);
 
 !SLIDE
-# union (`+`)
+## union (`+`)
     @@@sql
     numrange(5,15) + numrange(10,20)
     => '[5, 20)'
 
 !SLIDE
-# exclusion constraint
+## exclusion constraint
     @@@sql
     ALTER TABLE gear_reservations ADD
       EXCLUDE USING gist 

@@ -1,0 +1,103 @@
+* workflow
+
+# start by opening up PSQL
+$ heroku pg:psql -a isis
+
+# what tables have we got?
+\d
+
+# let's get a little more detail
+\d+
+
+# let's look at some records
+SELECT * from agents;
+
+# let's check out this expenses table for our expense report
+\d expenses
+
+# that's cool, how did that work? was it magic?
+\set ECHO_HIDDEN on
+\d
+
+# woah, okay, let's leave that be for now, but there are lots of other similar insights
+\set ECHO_HIDDEN off
+
+# let's go back to exploring data
+SELECT * from expenses LIMIT 1;
+
+# looks good, but we've given them a number and taken away their name
+\e
+SELECT * from expenses JOIN agents on agent_uuid = agents.uuid LIMIT 1;
+
+# formatting sucks, let's clean this up
+\x
+SELECT * from expenses JOIN agents on agent_uuid = agents.uuid LIMIT 1;
+
+# (you should put this line into ~/.psqlrc and forget it)
+\x auto
+
+# okay, that's cool, let's make a little synthetic data for the next demo
+# we're going to generate random status reports from our agents, who they are, what they're doing and when.
+# start with some things agents could be doing
+SELECT ARRAY['training','idle','assigned','captured','recovering'];
+
+# now let's pick a random one (sql arrays are 1-indexed)
+SELECT (ARRAY['training','idle','assigned','captured','recovering'])[random() * 4 + 1];
+
+# okay, we'll need to generate some random times for agent status updates
+SELECT now();
+
+# going back a year?
+SELECT now() - '1 year ago'::interval;
+
+# a random amount of a year
+SELECT now() - '1 year ago'::interval * random();
+
+# and a random agent
+SELECT (SELECT uuid FROM agents ORDER BY random() LIMIT 1);
+
+# cool, put it together
+SELECT
+  (SELECT uuid FROM agents ORDER BY random() LIMIT 1) as agent_uuid,
+  (ARRAY['training','idle','assigned','captured','recovering'])[random() * 4 + 1] as state,
+  now() - '1 year ago'::interval * random() as time
+FROM generate_series(1, 10)
+
+# oops! they're all the same one. the optimizer has a bug so we need to trick it :(
+SELECT
+  (SELECT uuid FROM agents ORDER BY random()+g*0 LIMIT 1) as agent_uuid,
+  (ARRAY['training','idle','assigned','captured','recovering'])[random() * 4 + 1] as state,
+  now() - '1 year ago'::interval * random() as time
+FROM generate_series(1, 10) as g
+
+# okay! looks good! let's make it a table
+CREATE TABLE agent_statuses AS (SELECT
+  (SELECT uuid FROM agents ORDER BY random()+g*0 LIMIT 1) as agent_uuid,
+  (ARRAY['training','idle','assigned','captured','recovering'])[random() * 4 + 1] as state,
+  now() - '1 year ago'::interval * random() as time
+FROM generate_series(1, 1000) as g);
+
+# great, now let's find out what our agents have been up to
+SELECT * from agent_statuses ORDER BY agent_uuid, time;
+
+# i wonder which agents got captured while they were in training? this is going to need a WINDOW FUNCTION
+SELECT *, lead(state, 1) OVER (partition by agent_uuid order by time) as next from agent_statuses;
+
+# cool! now let's stick that in a subquery
+WITH status_with_next AS (
+  SELECT *, lead(state, 1) OVER (partition by agent_uuid order by time) as next from agent_statuses
+)
+SELECT * from status_with_next WHERE state = 'training' and next = 'captured';
+
+# i wonder who the winner is for worst-at-training? pop that next one up in a subquery too
+WITH status_with_next AS (
+  SELECT *, lead(state, 1) OVER (partition by agent_uuid order by time) as next from agent_statuses
+),
+oops AS (
+  SELECT * from super_status WHERE state = 'training' and next = 'captured'
+)
+SELECT name, count(*) as training_captures from oops join agents on agents.uuid = agent_uuid GROUP BY name ORDER by training_captures DESC;
+
+# ouch. okay, let's put this in a dataclip
+https://dataclips.heroku.com/clips/new
+

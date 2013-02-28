@@ -9,12 +9,12 @@ Everyone has had a database where their primary key has become a big problem. Ev
 Just. Use. UUIDs.
 
 !SLIDE
-# install the extension
+## install the extension
     @@@sql
     CREATE EXTENSION "uuid-ossp";
 
 !SLIDE
-# use it for your primary keys
+## use it for your primary keys
     @@@sql
     CREATE TABLE t (
       uuid uuid PRIMARY KEY 

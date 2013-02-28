@@ -1,5 +1,5 @@
 !SLIDE subsection
-# Window Functions
+# window functions
     @@@sql
     SELECT lead(status, 1) OVER 
       ( PARTITION BY agent_uuid 
@@ -12,7 +12,7 @@ that have to do with ordering or grouping their contents. This is a
 huge pain to implement correctly in application code and inefficient.
 
 !SLIDE
-# determining event duration
+## determining event duration
     @@@sql
     SELECT when - lag(when, 1) OVER 
         ( PARTITION BY agent_uuid 
@@ -21,7 +21,7 @@ huge pain to implement correctly in application code and inefficient.
     FROM metrics;
 
 !SLIDE
-# find the sixth decile
+## find the sixth decile
     @@@sql
     WITH decile as (
       SELECT *, 
@@ -29,7 +29,7 @@ huge pain to implement correctly in application code and inefficient.
     ) SELECT * FROM decile where ntile = 6;
 
 !SLIDE
-# tracking state changes
+## tracking state changes
     @@@sql
     SELECT (agent_statuses) as current, 
            lead((agent_statuses), 1) OVER 

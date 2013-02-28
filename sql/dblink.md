@@ -1,5 +1,5 @@
 !SLIDE subsection
-# DBLink
+# dblink
     @@@sql
     SELECT dblink('SELECT * FROM users')
       as users;
@@ -13,7 +13,7 @@
     SELECT dblink_connect('postgres://')
 
 !SLIDE
-## query remote data
+## query remote databases
     @@@sql
     SELECT * FROM dblink(
       'select * from agents') as 
