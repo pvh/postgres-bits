@@ -1,5 +1,6 @@
 !SLIDE bullets
 
-* the great hash in the sky
-* creating test data
-* questionable queries
+* analytics workflow
+* fabricating test data
+* expense reports
+* operational intelligence
