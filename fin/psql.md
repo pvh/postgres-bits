@@ -1,5 +1,5 @@
 !SLIDE subsection
-## BONUS ROUND
+## *BONUS ROUND!*
 # psql
     @@@bash
     pvhbook:postgres-bits pvh$ psql
