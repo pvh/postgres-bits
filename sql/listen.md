@@ -24,6 +24,8 @@
 ## Further reading
 
 [Postgres Manual: NOTIFY](http://www.postgresql.org/docs/9.2/static/sql-notify.html)
+
 [Postgres Manual: LISTEN](http://www.postgresql.org/docs/9.2/static/sql-listen.html)
+
 [queue_classic: a postgres-based queue](https://github.com/ryandotsmith/queue_classic)
 
