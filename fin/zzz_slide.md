@@ -1,6 +1,8 @@
 !SLIDE
+# other resources
 
-
+* [JSON and JS in Postgres](http://plv8-pgconfeu.herokuapp.com/)
+* [Postgres Guide](http://postgresguide.com)
 
 !SLIDE
 
@@ -14,4 +16,3 @@
 <tr> <th> <b>slides:</b> </th> <td> postgres-bits.heroku.com </td> </tr>
 </table>
 
-## ALSO: [JSON and JS in Postgres](http://plv8-pgconfeu.herokuapp.com/)
