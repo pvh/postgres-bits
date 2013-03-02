@@ -46,7 +46,7 @@
 ## WITH expressions are optimization boundaries
 
 !SLIDE
-# Further reading
-.notes https://dataclips.heroku.com/efbiveiwdjrwrfpykhtomnehgkgn
+## Further reading
 
-http://www.postgresql.org/docs/9.2/static/queries-with.html
+[Live Example](https://dataclips.heroku.com/efbiveiwdjrwrfpykhtomnehgkgn)
+[7.8. WITH Queries](http://www.postgresql.org/docs/9.2/static/queries-with.html)
