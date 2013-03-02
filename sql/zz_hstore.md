@@ -67,5 +67,5 @@
 !SLIDE
 ## Further reading
 
-http://www.postgresql.org/docs/9.2/static/hstore.html
-http://blog.remarkablelabs.com/2012/12/a-love-affair-with-postgresql-rails-4-countdown-to-2013
+[Postgres Manual: F.16. hstore](http://www.postgresql.org/docs/9.2/static/hstore.html)
+[Blog on using hstore with Rails 4 from Kevin Faustino](http://blog.remarkablelabs.com/2012/12/a-love-affair-with-postgresql-rails-4-countdown-to-2013)
