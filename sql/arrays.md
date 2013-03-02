@@ -29,10 +29,12 @@
     select unnest(tags) as tag from agents 
        where name = 'Sterling Archer';
 
-.notes https://dataclips.heroku.com/ocdsqenqybkpuyhsyhmectulykhf
 
 !SLIDE
 ## Further reading
 
-http://www.postgresql.org/docs/9.2/static/arrays.html
-http://www.postgresql.org/docs/9.2/static/functions-array.html
+[Example Dataclip](https://dataclips.heroku.com/ocdsqenqybkpuyhsyhmectulykhf)
+
+[Postgres Manual: 8.15 Arrays](http://www.postgresql.org/docs/9.2/static/arrays.html)
+
+[Postgres Manual: 9.18. Array Functions and Operators](http://www.postgresql.org/docs/9.2/static/functions-array.html)

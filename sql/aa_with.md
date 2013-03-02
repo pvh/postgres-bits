@@ -47,6 +47,6 @@
 
 !SLIDE
 ## Further reading
+[Example Dataclip](https://dataclips.heroku.com/efbiveiwdjrwrfpykhtomnehgkgn)
 
-[Live Example](https://dataclips.heroku.com/efbiveiwdjrwrfpykhtomnehgkgn)
-[7.8. WITH Queries](http://www.postgresql.org/docs/9.2/static/queries-with.html)
+[Postgres Manual: 7.8. WITH Queries](http://www.postgresql.org/docs/9.2/static/queries-with.html)
