@@ -68,4 +68,7 @@
 ## Further reading
 
 [Postgres Manual: F.16. hstore](http://www.postgresql.org/docs/9.2/static/hstore.html)
+
+[Schemaless SQL slides on hstore](http://plv8-pgconfeu.herokuapp.com/#29)
+
 [Blog on using hstore with Rails 4 from Kevin Faustino](http://blog.remarkablelabs.com/2012/12/a-love-affair-with-postgresql-rails-4-countdown-to-2013)
