@@ -27,6 +27,12 @@
     => '[5, 20)'
 
 !SLIDE
+## intersection (`*`)
+    @@@sql
+    numrange(5,15) * numrange(10,20)
+    => '[10, 15)'
+
+!SLIDE
 ## exclusion constraint
     @@@sql
     ALTER TABLE gear_reservations ADD
