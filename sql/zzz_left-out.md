@@ -17,5 +17,5 @@
 # [postGIS](http://opengeo.org/technology/postgis/)
 ## geographical awesomeness
 !SLIDE
-# [JSON and PL/V8](http://plv8-pgopen.herokuapp.com/)
+# [JSON and PL/V8](http://plv8-pgconfeu.herokuapp.com/#42)
 ## for "schemaless" sql
