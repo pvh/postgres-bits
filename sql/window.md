@@ -40,9 +40,12 @@ huge pain to implement correctly in application code and inefficient.
     
 !SLIDE
 ## Further reading
-.notes https://dataclips.heroku.com/dsjnolxgeksipvyhujkgsyhymrmv
+[Example dataclip](https://dataclips.heroku.com/dsjnolxgeksipvyhujkgsyhymrmv)
 
-http://www.postgresql.org/docs/9.1/static/tutorial-window.html
-http://www.postgresql.org/docs/9.1/static/functions-window.html
-http://www.postgresql.org/docs/9.1/static/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS
-http://wiki.postgresql.org/wiki/Mandelbrot_set
+[Postgres Manual: 3.5. Window Functions](http://www.postgresql.org/docs/9.1/static/tutorial-window.html)
+
+[Postgres Manual: 9.19. Window Functions](http://www.postgresql.org/docs/9.1/static/functions-window.html)
+
+[Postgres Manual: 4.2.8. Window Function Calls](http://www.postgresql.org/docs/9.1/static/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS)
+
+bonus: `$ heroku pg:mandelbrot` (requires [pg-extras](http://github.com/heroku/pg-extras))

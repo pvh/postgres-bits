@@ -11,7 +11,7 @@
 # pgcrypto
 ## work with encryption in your database
 !SLIDE
-# pg_stat_activity, pg_stat_statements, pg_locks and pg_cancel_backend()
+# pg\_stat\_activity, pg\_stat\_statements, pg\_locks and pg\_cancel\_backend()
 ## know what's happening RIGHT NOW
 !SLIDE
 # postGIS
