@@ -14,4 +14,4 @@
 <tr> <th> <b>slides:</b> </th> <td> postgres-bits.heroku.com </td> </tr>
 </table>
 
-## see also: @leinweber on [JSON and Javascript in Postgres](http://plv8-pgconfeu.herokuapp.com/)
+## ALSO: [JSON and JS in Postgres](http://plv8-pgconfeu.herokuapp.com/)
