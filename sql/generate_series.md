@@ -25,4 +25,7 @@
 
 !SLIDE
 ## Further reading
-http://www.postgresql.org/docs/9.2/static/functions-srf.html
+
+[Example dataclip](https://dataclips.heroku.com/ndosbzbdetmsssntmdpttglgnjhv)
+
+[Postgres Manual: 9.24. Set Returning Functions](http://www.postgresql.org/docs/9.2/static/functions-srf.html)

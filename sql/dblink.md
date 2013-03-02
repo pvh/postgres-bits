@@ -24,5 +24,6 @@
 !SLIDE
 ## Further reading
 
-http://www.postgresql.org/docs/9.2/static/dblink.html
-http://www.postgresql.org/docs/9.2/static/contrib-dblink-function.html
+[Postgres Manual: F.9. dblink](http://www.postgresql.org/docs/9.2/static/dblink.html)
+
+[Postgres Manual: dblink function](http://www.postgresql.org/docs/9.2/static/contrib-dblink-function.html)
