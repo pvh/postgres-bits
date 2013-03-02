@@ -50,5 +50,7 @@
 ## Further reading
 
 [Example Dataclip](https://dataclips.heroku.com/xsfcgdnzcjqabukvdfuibebsxnwp)
+
 [Postgres Manual: 8.17. Range Types](http://www.postgresql.org/docs/devel/static/rangetypes.html)
+
 [Postgres Manual: 9.19. Range Functions and Operators](http://www.postgresql.org/docs/9.2/static/functions-range.html)
