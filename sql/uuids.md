@@ -9,6 +9,11 @@ Everyone has had a database where their primary key has become a big problem. Ev
 Just. Use. UUIDs.
 
 !SLIDE
+
+## stop using numbers as IDs.
+## just use UUIDs. seriously.
+
+!SLIDE
 ## install the extension
     @@@sql
     CREATE EXTENSION "uuid-ossp";
