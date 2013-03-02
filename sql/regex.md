@@ -25,6 +25,6 @@
 
 !SLIDE
 ## Further reading
-.notes https://dataclips.heroku.com/dxtuxfabmwomtssljyqxwrifzhhl
+[Example dataclip](https://dataclips.heroku.com/dxtuxfabmwomtssljyqxwrifzhhl)
 
-http://www.postgresql.org/docs/9.2/static/functions-matching.html
+[Postgres Manual: 9.7. Pattern Matching](http://www.postgresql.org/docs/9.2/static/functions-matching.html)

@@ -23,6 +23,6 @@ Just. Use. UUIDs.
 
 !SLIDE
 ## Further reading
-.notes https://dataclips.heroku.com/hgidwadijlyvxxudvsppuwlvwlnm
+[Example dataclip](https://dataclips.heroku.com/hgidwadijlyvxxudvsppuwlvwlnm)
 
-http://www.postgresql.org/docs/9.2/static/uuid-ossp.html
+[Postgres Manual: F.40. uuid-ossp](http://www.postgresql.org/docs/9.2/static/uuid-ossp.html)

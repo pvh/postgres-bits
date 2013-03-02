@@ -39,5 +39,6 @@
 !SLIDE
 ## Further reading
 
-http://www.postgresql.org/docs/9.2/static/datatype-datetime.html
-http://www.postgresql.org/docs/9.2/static/functions-datetime.html
+[Postgres Manual: 8.5. Date/Time Types](http://www.postgresql.org/docs/9.2/static/datatype-datetime.html)
+
+[Postgres Manual: 9.9. Date/Time Functions and Operators](http://www.postgresql.org/docs/9.2/static/functions-datetime.html)
