@@ -36,7 +36,7 @@
     SELECT * FROM reports
       WHERE attrs ? 'pressure';
 
-## or a subdocumenet
+## or a subdocument
     @@@sql
     SELECT * FROM reports WHERE attrs @>
      ('pressure => 100, 
