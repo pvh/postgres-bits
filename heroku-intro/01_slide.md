@@ -1,7 +1,8 @@
 !SLIDE
 ## Peter van Hardenberg ##
 ### *pvh@heroku.com* ###
-### Heroku Postgres ###
+### [Heroku Postgres](http://postgres.heroku.com) ###
+we offer postgres-as-a-service to heroku and standalone customers
 
 !SLIDE
 
